@@ -10,13 +10,6 @@ package principal;
  *
  * @author Maverick
  */
-public class Principal {
-    
-    
-      public static void main(String[] args) {
-        Pintar obj=new Pintar();
-        
-        obj.pintarcancha();
-    }
+public class AgenteDefensor {
     
 }
