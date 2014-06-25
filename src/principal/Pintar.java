@@ -13,25 +13,34 @@ import javax.swing.*;
  */
 public class Pintar {
 
+    public int balonx = 155;
+    public int balony = 385;
+    public int DirX=balonx % (25 + (int)(Math.random()*45))+1; //Dirección de la pelota
+    public int DirY=balony % 25 +1; //Dirección de la pelota 
+    
+    public int w = 800, h = 600;
+    public JLabel balon, J1, J2, J3, J4, J5, J6, J7,J8, J9, J10, J11, J12;
     public void pintarcancha() {
         JFrame vent = new JFrame("Volleyball Team UNET");
         JLabel fondo = new JLabel(new ImageIcon("cancha.jpg"));
-        JLabel J1 = new JLabel(new ImageIcon("4m.png"));
-        JLabel J2 = new JLabel(new ImageIcon("3m.png"));
-        JLabel J3 = new JLabel(new ImageIcon("3m.png"));
-        JLabel J4 = new JLabel(new ImageIcon("3m.png"));
-        JLabel J5 = new JLabel(new ImageIcon("4m.png"));
-        JLabel J6 = new JLabel(new ImageIcon("4m.png"));
+        J1 = new JLabel(new ImageIcon("4m.png"));
+        J2 = new JLabel(new ImageIcon("3m.png"));
+        J3 = new JLabel(new ImageIcon("3m.png"));
+        J4 = new JLabel(new ImageIcon("3m.png"));
+        J5 = new JLabel(new ImageIcon("4m.png"));
+        J6 = new JLabel(new ImageIcon("4m.png"));
         
         
-        JLabel J7 = new JLabel(new ImageIcon("1.png"));
-        JLabel J8 = new JLabel(new ImageIcon("2m.png"));
-        JLabel J9 = new JLabel(new ImageIcon("2m.png"));
+        J7 = new JLabel(new ImageIcon("1.png"));
+        J8 = new JLabel(new ImageIcon("2m.png"));
+        J9 = new JLabel(new ImageIcon("2m.png"));
         
-        JLabel J10 = new JLabel(new ImageIcon("1.png"));
-        JLabel J11 = new JLabel(new ImageIcon("1.png"));
-        JLabel J12 = new JLabel(new ImageIcon("2m.png"));
-        vent.setBounds(200, 350, 800, 600);
+        J10 = new JLabel(new ImageIcon("1.png"));
+        J11 = new JLabel(new ImageIcon("1.png"));
+        J12 = new JLabel(new ImageIcon("2m.png"));
+        
+        balon = new JLabel(new ImageIcon("balon.png"));
+        vent.setBounds(0, 0, 800, 600);
 
         J2.setBounds(700, 100, 60, 90);
         J1.setBounds(690, 250, 60, 90);
@@ -51,6 +60,10 @@ public class Pintar {
         J11.setBounds(299, 250, 60, 90);
         J12.setBounds(260, 370, 60, 90);
         
+        
+        balon.setBounds(balonx, balony, 30, 30);
+        
+        vent.getContentPane().add(balon);
         vent.getContentPane().add(J12);
         vent.getContentPane().add(J11);
         vent.getContentPane().add(J10);
