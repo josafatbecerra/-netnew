@@ -17,6 +17,8 @@ public class Principal {
         Pintar obj=new Pintar();
         
         obj.pintarcancha();
+        pelota pelotica = new pelota(obj);
+        pelotica.start();
     }
     
 }
