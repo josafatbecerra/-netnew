@@ -35,8 +35,12 @@ public class pelota extends Thread{
                     pinta.balon.getBounds().intersects(pinta.J4.getBounds()) ||
                     pinta.balon.getBounds().intersects(pinta.J5.getBounds()) ||
                     pinta.balon.getBounds().intersects(pinta.J6.getBounds()); 
-                    if(var)
+                    if(var){
                         lado = false;
+                        pinta.DirX=pinta.balonx % (25 + (int)(Math.random()*35))+1; //Dirección de la pelota
+                        pinta.DirY=pinta.balony % 25 +1;
+                        System.out.println("1");
+                    }
             }else{
             
             var =
@@ -46,8 +50,12 @@ public class pelota extends Thread{
                     pinta.balon.getBounds().intersects(pinta.J10.getBounds()) ||
                     pinta.balon.getBounds().intersects(pinta.J11.getBounds()) ||
                     pinta.balon.getBounds().intersects(pinta.J12.getBounds());
-                    if(var)
+                    if(var){
                         lado = true;
+                    //    pinta.DirX=pinta.balonx % (25 + (int)(Math.random()*35))+1; //Dirección de la pelota
+                       // pinta.DirY=pinta.balony % 25 +1;
+                        System.out.println("2");
+                    }
             }
             try {
                 pinta.balonx+=pinta.DirX;
@@ -65,8 +73,15 @@ public class pelota extends Thread{
                 else if ((pinta.balony+45) >= pinta.h || var)
                 pinta.DirY*= -1; 
                 
-                pinta.balon.setLocation(pinta.balonx, pinta.balony);
-               
+                if(pinta.balony-45<=40 || pinta.balony+45>=555 || pinta.balonx-45<=0 || pinta.balonx-45>=800 ){
+                    pinta.balon.setLocation(155, 385);
+                    
+                    this.stop();
+                 //   pelota pelotica = new pelota(pinta);
+                 //   pelotica.start();
+                }
+                
+               pinta.balon.setLocation(pinta.balonx, pinta.balony);
 
 // System.out.println(pinta.balon.getBounds().intersects(pinta.balon.getBounds()));
   

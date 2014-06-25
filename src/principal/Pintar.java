@@ -15,7 +15,7 @@ public class Pintar {
 
     public int balonx = 155;
     public int balony = 385;
-    public int DirX=balonx % (25 + (int)(Math.random()*45))+1; //Dirección de la pelota
+    public int DirX=balonx % (25 + (int)(Math.random()*35))+1; //Dirección de la pelota
     public int DirY=balony % 25 +1; //Dirección de la pelota 
     
     public int w = 800, h = 600;
