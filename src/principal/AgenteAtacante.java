@@ -6,10 +6,23 @@
 
 package principal;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Maverick
  */
-public class AgenteAtacante {
+public class AgenteAtacante extends Agente {
+
+    private JLabel Imagen;
+    public AgenteAtacante(int Habilidades[],JLabel Jugador){
+        
+        super(Habilidades);
+        this.Imagen = Jugador;
+    }
     
+    public void iniciar_Armador(){
+        Hilo_Atacante x = new Hilo_Atacante(Imagen);
+        x.start();
+    }
 }
